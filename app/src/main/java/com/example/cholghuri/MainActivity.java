@@ -16,7 +16,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnLogin,btnSignup,button3;
+    private Button btnLogin,btnSignup,button3,locationMapBtn;
     private EditText editText,editText2;
     private FirebaseAuth mAuth;
     @Override
@@ -29,6 +29,15 @@ public class MainActivity extends AppCompatActivity {
         editText=findViewById(R.id.editText);
         editText2=findViewById(R.id.editText2);
         button3=findViewById(R.id.button3);
+        locationMapBtn=findViewById(R.id.locationMapBtn);
+
+        locationMapBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2= new Intent(MainActivity.this,LocationMap.class);
+                startActivity(intent2);
+            }
+        });
 
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +105,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         });}
+
+
 }
 
 
